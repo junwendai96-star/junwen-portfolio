@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Junwen Dai — IT & Biosecurity graduate portfolio combining technology, government operations, animal health and practical field experience." />
+  <title>Junwen Dai — IT × Biosecurity Portfolio</title>
+  <style>
+    :root{
+      --bg:#f4f7fa;
+      --surface:#ffffff;
+      --surface-2:#edf3f7;
+      --ink:#0a1724;
+      --muted:#66798a;
+      --navy:#071d31;
+      --navy-2:#0d3150;
+      --tech:#42bff5;
+      --tech-soft:#dff5ff;
+      --bio:#59cc8a;
+      --bio-soft:#e6f8ee;
+      --bridge:#8ea8ff;
+      --line:#d9e4ec;
+      --shadow:0 24px 70px rgba(7,29,49,.10);
+      --shadow-soft:0 12px 34px rgba(7,29,49,.07);
+      --max:1180px;
+    }
+    [data-theme="dark"]{
+      --bg:#06121d;
+      --surface:#0a1c2b;
+      --surface-2:#102639;
+      --ink:#edf6fb;
+      --muted:#9cb0bf;
+      --navy:#eff8fc;
+      --navy-2:#a9d9f0;
+      --line:#1c374b;
+      --tech-soft:#0b2d40;
+      --bio-soft:#0e3023;
+      --shadow:0 26px 75px rgba(0,0,0,.3);
+      --shadow-soft:0 12px 34px rgba(0,0,0,.18);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;transition:.25s ease}
+    a{text-decoration:none;color:inherit} button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .topbar{position:fixed;inset:0 0 auto;z-index:100;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid color-mix(in srgb,var(--line) 75%,transparent)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.03em;color:var(--navy)}
+    .brand-mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--tech),var(--bio));display:grid;place-items:center;color:#062033;font-size:13px;box-shadow:0 8px 22px rgba(66,191,245,.24)}
+    .brand small{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .navlinks{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:750;color:var(--muted)}
+    .navlinks a:hover,.navlinks a.active{color:var(--navy)}
+    .nav-actions{display:flex;gap:9px}.icon-btn{width:39px;height:39px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center}.menu{display:none}
+
+    /* HERO */
+    .hero{min-height:100vh;padding:126px 0 72px;display:flex;align-items:center;position:relative;overflow:hidden;background:
+      radial-gradient(circle at 76% 18%,rgba(66,191,245,.16),transparent 28%),
+      radial-gradient(circle at 88% 74%,rgba(89,204,138,.13),transparent 27%),
+      var(--bg)}
+    .hero::before{content:"";position:absolute;inset:0;opacity:.28;pointer-events:none;background-image:linear-gradient(rgba(31,85,119,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(31,85,119,.08) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000 6%,transparent 90%)}
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:62px;align-items:center;position:relative}
+    .status{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 85%,transparent);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .status-dot{width:8px;height:8px;border-radius:50%;background:var(--bio);box-shadow:0 0 0 5px color-mix(in srgb,var(--bio) 18%,transparent)}
+    .eyebrow{margin-top:23px;font-size:14px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--tech)}
+    h1{font-size:clamp(58px,7.6vw,105px);line-height:.91;letter-spacing:-.065em;margin:10px 0 22px;color:var(--navy)}
+    h1 .bio-word{color:var(--bio)} h1 .tech-word{color:var(--tech)}
+    .hero-copy{font-size:18px;max-width:700px;color:var(--muted);margin:0}
+    .hero-copy strong{color:var(--ink)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;gap:9px;align-items:center;justify-content:center;padding:13px 19px;border-radius:14px;font-weight:850;border:1px solid transparent;transition:.2s}.btn.primary{background:#081f34;color:#fff;box-shadow:0 14px 34px rgba(7,29,49,.18)}[data-theme="dark"] .btn.primary{background:linear-gradient(135deg,var(--tech),var(--bio));color:#061722}.btn.secondary{background:var(--surface);border-color:var(--line)}.btn:hover{transform:translateY(-2px)}
+    .hero-note{margin-top:18px;font-size:13px;color:var(--muted)}
+
+    .dual-stage{min-height:570px;display:grid;place-items:center;position:relative}
+    .orbit{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb,var(--line) 70%,transparent);animation:rotate 34s linear infinite}.orbit.o1{width:480px;height:480px}.orbit.o2{width:390px;height:390px;border-style:dashed;animation-duration:25s;animation-direction:reverse}.orbit.o3{width:305px;height:305px;animation-duration:18s}
+    @keyframes rotate{to{transform:rotate(360deg)}}
+    .identity-core{width:360px;height:430px;border-radius:38px;position:relative;overflow:hidden;z-index:3;box-shadow:0 38px 95px rgba(6,24,39,.28);border:1px solid rgba(255,255,255,.12);background:#0a2238}
+    .identity-core::before,.identity-core::after{content:"";position:absolute;inset:0 50% 0 0}.identity-core::before{background:
+      linear-gradient(rgba(86,199,245,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(86,199,245,.10) 1px,transparent 1px),linear-gradient(145deg,#08243a,#0b3550);background-size:30px 30px,30px 30px,auto}.identity-core::after{inset:0 0 0 50%;background:radial-gradient(circle at 30% 30%,rgba(89,204,138,.24),transparent 26%),radial-gradient(circle at 78% 67%,rgba(89,204,138,.16),transparent 25%),linear-gradient(145deg,#0a2a2a,#103c35)}
+    .split-line{position:absolute;z-index:4;left:50%;top:22px;bottom:22px;width:1px;background:rgba(255,255,255,.18)}
+    .core-labels{position:absolute;z-index:5;left:20px;right:20px;top:20px;display:flex;justify-content:space-between;font-size:10px;font-weight:900;letter-spacing:.17em;text-transform:uppercase}.core-labels .it{color:#87ddff}.core-labels .bio{color:#8ce9ad}
+    .core-symbol{position:absolute;z-index:5;inset:0;display:grid;place-items:center;text-align:center}.core-symbol .jd{width:132px;height:132px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(12px);font-size:58px;font-weight:950;letter-spacing:-.08em;color:#fff;box-shadow:0 20px 50px rgba(0,0,0,.16)}
+    .core-symbol .role{position:absolute;bottom:38px;left:20px;right:20px;color:#fff;font-size:24px;font-weight:900;line-height:1.1}.core-symbol .role span{display:block;margin-top:8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#bdd4df;font-weight:800}
+    .circuit{position:absolute;z-index:4;color:rgba(123,221,255,.88);font:800 12px ui-monospace,monospace}.c1{left:28px;top:85px}.c2{left:34px;bottom:116px}.dna{position:absolute;z-index:4;right:28px;top:86px;width:66px;height:125px;opacity:.78}.dna i{position:absolute;left:50%;width:54px;height:14px;border-top:2px solid #8ce9ad;border-bottom:2px solid #8ce9ad;border-radius:50%;transform-origin:center}.dna i:nth-child(1){top:4px;transform:translateX(-50%) rotate(18deg)}.dna i:nth-child(2){top:24px;transform:translateX(-50%) rotate(-18deg)}.dna i:nth-child(3){top:44px;transform:translateX(-50%) rotate(18deg)}.dna i:nth-child(4){top:64px;transform:translateX(-50%) rotate(-18deg)}.dna i:nth-child(5){top:84px;transform:translateX(-50%) rotate(18deg)}
+    .float{position:absolute;z-index:6;padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 94%,transparent);box-shadow:var(--shadow-soft);font-size:11px;font-weight:900;animation:float 4.8s ease-in-out infinite;white-space:nowrap}.float.tech{color:#1688bc;border-color:color-mix(in srgb,var(--tech) 40%,var(--line))}.float.bio{color:#18854a;border-color:color-mix(in srgb,var(--bio) 42%,var(--line))}.ft1{left:2px;top:92px}.ft2{left:-30px;top:240px;animation-delay:.7s}.ft3{left:28px;bottom:62px;animation-delay:1.2s}.fb1{right:2px;top:100px;animation-delay:.4s}.fb2{right:-35px;top:245px;animation-delay:1s}.fb3{right:22px;bottom:64px;animation-delay:1.5s}
+    @keyframes float{50%{transform:translateY(-8px)}}
+
+    .identity-band{position:relative;margin-top:-32px;z-index:10}.identity-band-inner{display:grid;grid-template-columns:1fr 80px 1fr;align-items:center;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:24px;padding:22px 30px}.band-side small{display:block;font-size:10px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.band-side.tech small{color:var(--tech)}.band-side.bio small{color:var(--bio)}.band-side strong{display:block;margin-top:4px;font-size:20px;color:var(--navy)}.bridge{text-align:center;font-size:28px;color:var(--muted)}
+
+    section{padding:100px 0}.section-head{display:grid;grid-template-columns:170px 1fr;gap:32px;align-items:end;margin-bottom:46px}.section-kicker{font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:var(--tech)}.section-title{font-size:clamp(38px,5vw,64px);line-height:1.02;letter-spacing:-.045em;color:var(--navy);margin:0}.section-sub{margin:12px 0 0;color:var(--muted);max-width:760px}
+
+    /* profile */
+    .profile-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px}.statement{background:linear-gradient(145deg,#08243a,#0d3a58);color:#fff;border-radius:30px;padding:34px;box-shadow:0 28px 70px rgba(7,29,49,.18);min-height:330px;display:flex;flex-direction:column;justify-content:space-between}.statement h3{font-size:34px;line-height:1.08;letter-spacing:-.04em;margin:0}.statement p{color:#bed0dc;margin:24px 0 0}.statement .mini-line{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}.statement .mini-line span{font-size:11px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);color:#d9ecf4}.backgrounds{display:grid;grid-template-columns:1fr 1fr;gap:16px}.bg-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow-soft);position:relative;overflow:hidden}.bg-card::after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-70px;top:-70px}.bg-card.tech::after{background:color-mix(in srgb,var(--tech) 16%,transparent)}.bg-card.bio::after{background:color-mix(in srgb,var(--bio) 17%,transparent)}.bg-card small{font-weight:950;letter-spacing:.13em;text-transform:uppercase;font-size:10px}.bg-card.tech small{color:var(--tech)}.bg-card.bio small{color:var(--bio)}.bg-card h4{font-size:23px;line-height:1.15;margin:9px 0;color:var(--navy)}.bg-card p{margin:0;color:var(--muted);font-size:14px}.bg-card .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.bg-card .chips span{font-size:11px;font-weight:800;padding:6px 8px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line)}
+
+    /* experience */
+    .experience{background:var(--surface-2)}.timeline{position:relative;padding-left:52px}.timeline::before{content:"";position:absolute;left:17px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--tech),var(--bridge),var(--bio))}.exp{position:relative;display:grid;grid-template-columns:280px 1fr;gap:32px;padding-bottom:40px}.exp:last-child{padding-bottom:0}.exp::before{content:"";position:absolute;left:-44px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:5px solid var(--tech);box-shadow:0 0 0 3px color-mix(in srgb,var(--tech) 18%,transparent)}.exp.bio::before{border-color:var(--bio);box-shadow:0 0 0 3px color-mix(in srgb,var(--bio) 18%,transparent)}.exp-meta small{font-size:10px;font-weight:950;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.exp-meta h3{font-size:23px;line-height:1.16;margin:9px 0 6px;color:var(--navy)}.exp-org{font-size:14px;color:var(--muted);font-weight:700}.exp-body{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px 28px;box-shadow:var(--shadow-soft)}.exp-body p,.exp-body ul{color:var(--muted)}.exp-body p{margin:0}.exp-body ul{margin:15px 0 0;padding-left:18px}.exp-body li{margin:6px 0}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{font-size:10px;font-weight:850;padding:6px 9px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line)}.tag.tech{color:#1688bc;background:color-mix(in srgb,var(--tech) 9%,var(--surface));border-color:color-mix(in srgb,var(--tech) 27%,var(--line))}.tag.bio{color:#18854a;background:color-mix(in srgb,var(--bio) 10%,var(--surface));border-color:color-mix(in srgb,var(--bio) 29%,var(--line))}
+
+    /* projects */
+    .projects-intro{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}.lane{border-radius:20px;padding:18px 21px;border:1px solid var(--line);background:var(--surface);display:flex;justify-content:space-between;align-items:center}.lane b{font-size:13px;letter-spacing:.1em;text-transform:uppercase}.lane.tech b{color:#1688bc}.lane.bio b{color:#18854a}.lane span{font-size:12px;color:var(--muted)}
+    .portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.project-column{display:grid;gap:18px}.project-column-title{display:flex;align-items:center;gap:10px;margin-bottom:2px;font-size:12px;font-weight:950;letter-spacing:.13em;text-transform:uppercase}.project-column-title.tech{color:#1688bc}.project-column-title.bio{color:#18854a}.dot{width:10px;height:10px;border-radius:50%;background:currentColor;box-shadow:0 0 0 5px color-mix(in srgb,currentColor 12%,transparent)}
+    .project{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:var(--shadow-soft);position:relative;overflow:hidden}.project.feature-tech{background:linear-gradient(150deg,#08243a,#0d3b58);color:#fff;border:0;min-height:500px}.project.feature-bio{background:linear-gradient(150deg,#0a2d2a,#124439);color:#fff;border:0;min-height:500px}.project .kicker{font-size:10px;font-weight:950;letter-spacing:.13em;text-transform:uppercase}.project.feature-tech .kicker{color:#7ddcff}.project.feature-bio .kicker{color:#8fe8b0}.project:not(.feature-tech):not(.feature-bio) .kicker.tech{color:#1688bc}.project:not(.feature-tech):not(.feature-bio) .kicker.bio{color:#18854a}.project h3{font-size:28px;line-height:1.12;letter-spacing:-.035em;margin:9px 0 10px;color:var(--navy)}.project.feature-tech h3,.project.feature-bio h3{color:#fff}.project p{color:var(--muted);margin:0}.project.feature-tech p,.project.feature-bio p{color:#c1d2dc}.project .project-list{margin:18px 0 0;padding-left:18px;color:var(--muted)}.project.feature-tech .project-list,.project.feature-bio .project-list{color:#c8d8df}.project-list li{margin:6px 0}.architecture{margin-top:28px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.node{min-width:86px;min-height:72px;border-radius:15px;display:grid;place-items:center;text-align:center;padding:9px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.06);font-size:11px;font-weight:850;color:#e7f6fb}.arrow{font-weight:900;color:#7bdcff}.bio-flow{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.bio-step{border-radius:15px;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}.bio-step b{display:block;font-size:11px;color:#91e8b1}.bio-step span{display:block;margin-top:4px;font-size:12px;color:#d6e8df}.project .tags{margin-top:22px}.feature-tech .tag,.feature-bio .tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#eaf5f7}
+
+    /* skills */
+    .skills{background:#071d31;color:#eff8fc}.skills .section-title{color:#fff}.skills .section-sub{color:#adc2d0}.skill-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}.skill-card{border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.045);border-radius:24px;padding:27px}.skill-card.tech{box-shadow:inset 0 3px 0 rgba(66,191,245,.75)}.skill-card.bio{box-shadow:inset 0 3px 0 rgba(89,204,138,.75)}.skill-card.bridge{box-shadow:inset 0 3px 0 rgba(142,168,255,.75)}.skill-card h3{margin:0 0 10px;font-size:22px}.skill-card p{margin:0;color:#adc2d0;font-size:14px}.chip-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.chip-cloud span{font-size:11px;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#e5f0f4}
+
+    /* education */
+    .edu-list{display:grid;gap:18px}.edu{display:grid;grid-template-columns:170px 1fr auto;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px 30px;box-shadow:var(--shadow-soft)}.edu-year{font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.edu h3{font-size:24px;margin:0 0 5px;color:var(--navy)}.edu p{margin:0;color:var(--muted)}.edu-mark{min-width:66px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:12px;font-weight:950;letter-spacing:.08em}.edu-mark.tech{background:var(--tech-soft);color:#167aa7}.edu-mark.bio{background:var(--bio-soft);color:#177943}
+
+    /* contact */
+    .contact-box{border-radius:34px;background:linear-gradient(135deg,#071d31,#104c5b);color:#fff;padding:50px;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;box-shadow:0 34px 85px rgba(5,24,40,.22)}.contact-box h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.045em;margin:0 0 14px}.contact-box p{margin:0;color:#bed1da}.contact-links{display:grid;gap:10px}.contact-link{display:flex;justify-content:space-between;align-items:center;border-radius:14px;padding:14px 16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);font-weight:800}.contact-link span{color:#8fe7bf}footer{padding:28px 0 36px;text-align:center;color:var(--muted);font-size:12px}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:980px){.hero-grid,.profile-grid,.contact-box{grid-template-columns:1fr}.dual-stage{min-height:520px}.section-head{grid-template-columns:1fr;gap:8px}.exp{grid-template-columns:1fr}.portfolio-grid{grid-template-columns:1fr}.skill-grid{grid-template-columns:1fr 1fr}.edu{grid-template-columns:140px 1fr auto}}
+    @media(max-width:720px){.wrap{width:min(var(--max),calc(100% - 28px))}.navlinks{display:none;position:absolute;top:67px;left:14px;right:14px;flex-direction:column;align-items:flex-start;background:var(--surface);border:1px solid var(--line);padding:18px;border-radius:18px;box-shadow:var(--shadow)}.navlinks.open{display:flex}.menu{display:grid}.hero{padding-top:112px}h1{font-size:57px}.hero-copy{font-size:16px}.dual-stage{min-height:470px}.identity-core{width:310px;height:395px}.orbit.o1{width:370px;height:370px}.orbit.o2{width:315px;height:315px}.orbit.o3{width:260px;height:260px}.float{font-size:10px;padding:8px 10px}.ft1{left:0}.ft2{left:-4px}.fb1{right:0}.fb2{right:-4px}.identity-band-inner{grid-template-columns:1fr;gap:13px}.bridge{transform:rotate(90deg)}section{padding:76px 0}.backgrounds,.projects-intro,.skill-grid{grid-template-columns:1fr}.timeline{padding-left:42px}.timeline::before{left:12px}.exp::before{left:-34px}.edu{grid-template-columns:1fr}.edu-mark{display:none}.contact-box{padding:31px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orbit,.float{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="brand-mark">JD</span><span>Junwen Dai<br><small>IT × Biosecurity</small></span></a>
+    <nav class="navlinks" id="navlinks"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+    <div class="nav-actions"><button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button><button class="icon-btn menu" id="menuBtn" aria-label="Open menu">☰</button></div>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="status"><span class="status-dot"></span> Canberra · Australia</div>
+        <div class="eyebrow">IT & Biosecurity Graduate</div>
+        <h1><span class="tech-word">Technology</span> × <span class="bio-word">Biological Science.</span></h1>
+        <p class="hero-copy">I bring together <strong>information technology</strong> and a practical background in <strong>animal health, quarantine and biosecurity</strong> — with experience in government operations, field environments and structured technical work.</p>
+        <div class="hero-actions"><a class="btn primary" href="#projects">Explore both sides <span>→</span></a><a class="btn secondary" href="Junwen_Dai_CV.docx" download>Download CV <span>↓</span></a></div>
+        <div class="hero-note">Cloud · Networking · Python · Biosecurity · Animal Health · Disease Prevention</div>
+      </div>
+
+      <div class="dual-stage reveal" aria-label="Visual representation of Junwen Dai's IT and biosecurity background">
+        <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+        <div class="float tech ft1">Cloud Computing</div><div class="float tech ft2">Networking</div><div class="float tech ft3">Python · Web</div>
+        <div class="float bio fb1">Biosecurity</div><div class="float bio fb2">Animal Health</div><div class="float bio fb3">Quarantine · Disease</div>
+        <div class="identity-core">
+          <div class="split-line"></div>
+          <div class="core-labels"><span class="it">Information Technology</span><span class="bio">Biological Science</span></div>
+          <div class="circuit c1">01 → cloud()</div><div class="circuit c2">{ network: secure }</div>
+          <div class="dna"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="core-symbol"><div class="jd">JD</div><div class="role">Junwen Dai<span>IT × BIOSECURITY</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="identity-band"><div class="wrap identity-band-inner reveal"><div class="band-side tech"><small>Technology Background</small><strong>Cloud · Networks · Systems · Web</strong></div><div class="bridge">↔</div><div class="band-side bio"><small>Biological Background</small><strong>Biosecurity · Animal Health · Quarantine</strong></div></div></div>
+
+  <section id="profile">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="section-kicker">01 · Profile</div><div><h2 class="section-title">Two backgrounds. One professional identity.</h2><p class="section-sub">Rather than hiding the change in discipline, this portfolio makes it visible. My technical training and biological background both shape how I approach systems, procedures, risk and practical problems.</p></div></div>
+      <div class="profile-grid">
+        <article class="statement reveal"><div><h3>From animal health and field practice to cloud systems and digital infrastructure.</h3><p>My postgraduate IT study built my technical foundation. Government, biosecurity and animal-health experience strengthened my documentation, compliance, communication and observation skills.</p></div><div class="mini-line"><span>Canberra based</span><span>Government experience</span><span>Hands-on practice</span><span>Technical study</span></div></article>
+        <div class="backgrounds">
+          <article class="bg-card tech reveal"><small>Technology</small><h4>Systems, cloud and digital problem solving</h4><p>Postgraduate IT study and practical labs across cloud infrastructure, networking, databases, technical support and basic web development.</p><div class="chips"><span>Cloud</span><span>Networking</span><span>Python</span><span>HTML</span><span>Databases</span></div></article>
+          <article class="bg-card bio reveal"><small>Biology & Biosecurity</small><h4>Animal health, quarantine and disease prevention</h4><p>Undergraduate training and practical experience in animal health, laboratory work, biosecurity, disease detection and quarantine procedures.</p><div class="chips"><span>Biosecurity</span><span>Animal Health</span><span>Quarantine</span><span>Laboratory</span><span>Disease Prevention</span></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="section-kicker">02 · Experience</div><div><h2 class="section-title">Experience across public service and biosecurity.</h2><p class="section-sub">Professional experience is kept separate from academic practical work so that each part of my background is clear and credible.</p></div></div>
+      <div class="timeline">
+        <article class="exp reveal"><div class="exp-meta"><small>Government & Administration</small><h3>Community Supervision & Public Administration Support</h3><div class="exp-org">Government Department · China</div></div><div class="exp-body"><p>Supported routine community supervision, inspections and administrative activities in a structured public-sector environment.</p><ul><li>Assisted with coordination between staff, residents and relevant departments.</li><li>Handled general public enquiries and communication professionally.</li><li>Maintained records, organised documentation and reported issues to responsible staff.</li><li>Worked within established procedures and changing day-to-day priorities.</li></ul><div class="tags"><span class="tag">Administration</span><span class="tag">Records</span><span class="tag">Coordination</span><span class="tag">Public Communication</span></div></div></article>
+        <article class="exp bio reveal"><div class="exp-meta"><small>Animal Health & Biosecurity</small><h3>Animal Disease Prevention & Inspection Support</h3><div class="exp-org">Agricultural Government Department · China</div></div><div class="exp-body"><p>Participated in animal disease prevention and inspection activities during the African Swine Fever period.</p><ul><li>Supported animal health monitoring, inspection, documentation and reporting.</li><li>Followed strict hygiene, disinfection, safety and biosecurity procedures.</li><li>Observed animal-health and operational conditions and escalated potential concerns.</li><li>Developed strong attention to detail through procedure-based compliance work.</li></ul><div class="tags"><span class="tag bio">Biosecurity</span><span class="tag bio">Inspection</span><span class="tag bio">Disease Prevention</span><span class="tag bio">Reporting</span></div></div></article>
+        <article class="exp bio reveal"><div class="exp-meta"><small>2015–2019 · University Practical Training</small><h3>Animal Care, Laboratory & Field Experience</h3><div class="exp-org">Shandong Agricultural University · China</div></div><div class="exp-body"><p>Completed practical training across animal quarantine, animal health, disease detection, biosafety and record-keeping.</p><ul><li>Worked with animals including dogs, cats, rats, rabbits, livestock and birds.</li><li>Applied hygiene, disinfection and contamination-control procedures.</li><li>Developed safe handling, observation and accurate instruction-following habits.</li></ul><div class="tags"><span class="tag bio">Animal Care</span><span class="tag bio">Laboratory</span><span class="tag bio">Field Work</span><span class="tag bio">Biosafety</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="section-kicker">03 · Portfolio</div><div><h2 class="section-title">Two disciplines. One portfolio.</h2><p class="section-sub">The project section is deliberately split into Technology and Biology & Biosecurity so visitors can see both sides of my background before reading the details.</p></div></div>
+      <div class="projects-intro reveal"><div class="lane tech"><b>Technology Projects</b><span>Cloud · Networking · Web</span></div><div class="lane bio"><b>Biology & Biosecurity Projects</b><span>Animal Health · Laboratory · Disease Prevention</span></div></div>
+      <div class="portfolio-grid">
+        <div class="project-column">
+          <div class="project-column-title tech"><span class="dot"></span>Technology</div>
+          <article class="project feature-tech reveal"><div class="kicker">Featured · Cloud Project</div><h3>AWS Healthcare Data Pipeline</h3><p>A demonstration cloud pipeline designed to receive healthcare records, process them, store structured data and make results available for visual analysis.</p><div class="architecture"><div class="node">API<br>Gateway</div><div class="arrow">→</div><div class="node">Lambda</div><div class="arrow">→</div><div class="node">S3 / RDS</div><div class="arrow">→</div><div class="node">QuickSight</div></div><ul class="project-list"><li>Built a serverless data flow using AWS services.</li><li>Used monitoring and storage components to support the demo workflow.</li><li>Focused on practical integration rather than a purely theoretical architecture.</li></ul><div class="tags"><span class="tag">AWS</span><span class="tag">Lambda</span><span class="tag">RDS</span><span class="tag">QuickSight</span></div></article>
+          <article class="project reveal"><div class="kicker tech">Cloud & Networking</div><h3>Azure & Cisco Network Infrastructure Labs</h3><p>Hands-on work with virtual networks, routing, security rules, gateways, cloud connectivity and network troubleshooting.</p><div class="tags"><span class="tag tech">Azure</span><span class="tag tech">Cisco</span><span class="tag tech">VNet</span><span class="tag tech">Routing</span><span class="tag tech">NSG</span></div></article>
+          <article class="project reveal"><div class="kicker tech">Web Fundamentals</div><h3>Personal Portfolio Website</h3><p>A responsive personal site built with semantic HTML, CSS and lightweight JavaScript, designed to present both technical and biological experience in one identity.</p><div class="tags"><span class="tag tech">HTML</span><span class="tag tech">CSS</span><span class="tag tech">Responsive Design</span></div></article>
+        </div>
+
+        <div class="project-column">
+          <div class="project-column-title bio"><span class="dot"></span>Biology & Biosecurity</div>
+          <article class="project feature-bio reveal"><div class="kicker">Featured · Field & Biosecurity</div><h3>African Swine Fever Disease Prevention & Biosecurity Fieldwork</h3><p>Practical involvement in animal disease prevention and inspection activities during the African Swine Fever period, within a government-regulated environment.</p><div class="bio-flow"><div class="bio-step"><b>01 · Observe</b><span>Animal-health and operational conditions</span></div><div class="bio-step"><b>02 · Protect</b><span>Hygiene, PPE, disinfection and biosecurity</span></div><div class="bio-step"><b>03 · Record</b><span>Inspection, monitoring and documentation</span></div><div class="bio-step"><b>04 · Escalate</b><span>Report concerns to responsible staff</span></div></div><div class="tags"><span class="tag">Biosecurity</span><span class="tag">Disease Prevention</span><span class="tag">Inspection</span><span class="tag">Government Procedures</span></div></article>
+          <article class="project reveal"><div class="kicker bio">Veterinary Microbiology</div><h3>Veterinary Microbiology & Disease Detection Practicals</h3><p>University practical work involving poultry vaccination, chick embryo culture and Newcastle disease/virus-related laboratory training.</p><div class="tags"><span class="tag bio">Vaccination</span><span class="tag bio">Chick Embryo Culture</span><span class="tag bio">Disease Detection</span><span class="tag bio">Biosafety</span></div></article>
+          <article class="project reveal"><div class="kicker bio">Animal Science</div><h3>Animal Anatomy & Physiology Practical Program</h3><p>Hands-on training including rabbit cardiovascular and intestinal-nerve practicals, livestock anatomy and animal handling.</p><div class="tags"><span class="tag bio">Physiology</span><span class="tag bio">Anatomy</span><span class="tag bio">Animal Handling</span><span class="tag bio">Observation</span></div></article>
+          <article class="project reveal"><div class="kicker bio">Laboratory Practice</div><h3>Animal Pathology & Parasitology Practicals</h3><p>Laboratory and practical training focused on pathology observation, parasite-related work, specimen handling and safe laboratory procedures.</p><div class="tags"><span class="tag bio">Pathology</span><span class="tag bio">Parasitology</span><span class="tag bio">Specimen Handling</span><span class="tag bio">Lab Safety</span></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="section-kicker">04 · Skills</div><div><h2 class="section-title">The bridge between technical and practical work.</h2><p class="section-sub">No arbitrary skill percentages — just the areas I have studied, practiced or used in real environments.</p></div></div>
+      <div class="skill-grid">
+        <article class="skill-card tech reveal"><h3>Technology</h3><p>Postgraduate IT foundation and hands-on lab work.</p><div class="chip-cloud"><span>Microsoft Office</span><span>Python fundamentals</span><span>HTML & web fundamentals</span><span>Cloud computing</span><span>Networking</span><span>Databases</span><span>Technical troubleshooting</span></div></article>
+        <article class="skill-card bio reveal"><h3>Biology & Biosecurity</h3><p>Animal-health, quarantine and laboratory experience.</p><div class="chip-cloud"><span>Biosecurity</span><span>Animal Health</span><span>Disease Prevention</span><span>Quarantine</span><span>Hygiene & Disinfection</span><span>Laboratory Practice</span><span>Observation</span></div></article>
+        <article class="skill-card bridge reveal"><h3>Operations & Support</h3><p>Transferable skills that connect both sides of my background.</p><div class="chip-cloud"><span>Administrative Support</span><span>Records Management</span><span>Communication & Coordination</span><span>Compliance & Procedures</span><span>Problem Solving</span><span>Teamwork & Reliability</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="section-kicker">05 · Education</div><div><h2 class="section-title">Two disciplines that explain the portfolio.</h2><p class="section-sub">My education is not a hidden career switch; it is the foundation of the dual perspective shown throughout this site.</p></div></div>
+      <div class="edu-list"><article class="edu reveal"><div class="edu-year">2024–2025</div><div><h3>Master of Information Technology and Systems</h3><p>University of Canberra · Australia</p></div><div class="edu-mark tech">IT</div></article><article class="edu reveal"><div class="edu-year">2015–2019</div><div><h3>Bachelor's Degree in Animal and Plant Quarantine</h3><p>Shandong Agricultural University · China</p></div><div class="edu-mark bio">BIO</div></article></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-box reveal"><div><h2>Let’s connect.</h2><p>Based in Canberra, ACT. I am interested in opportunities where technology, structured operations, biosecurity knowledge or practical problem solving can add value.</p></div><div class="contact-links"><a class="contact-link" href="mailto:junwen.dai96@gmail.com">junwen.dai96@gmail.com <span>↗</span></a><a class="contact-link" href="tel:+61482035296">0482 035 296 <span>↗</span></a><a class="contact-link" href="Junwen_Dai_CV.docx" download>Download CV <span>↓</span></a></div></div>
+  </section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Junwen Dai · IT × Biosecurity Portfolio</div></footer>
+<script>
+  const root=document.documentElement;let saved=null;try{saved=localStorage.getItem('jd-theme')}catch(e){}if(saved)root.dataset.theme=saved;
+  document.getElementById('themeBtn').addEventListener('click',()=>{const next=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('jd-theme',next)}catch(e){}});
+  const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.11});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));requestAnimationFrame(()=>{document.querySelectorAll('.reveal').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight*1.15)el.classList.add('show')})});
+  const sections=[...document.querySelectorAll('main section[id]')],links=[...nav.querySelectorAll('a')];const sio=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -52% 0px'});sections.forEach(s=>sio.observe(s));document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
